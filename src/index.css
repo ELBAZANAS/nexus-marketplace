@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;750;800&family=Space+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1.05);
+  }
+  50% {
+    transform: translate(-40px, 40px) scale(0.9);
+  }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float-slow {
+  animation: float-slow 22s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 26s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 120s linear infinite;
+}
+
+body {
+  background-color: #F3EFEA;
+  color: #1A1A1A;
+  font-family: var(--font-sans);
+  /* Premium warm archival gradient & subtle matrix */
+  background-image: 
+    radial-gradient(#9B8E80 1.5px, transparent 1.5px),
+    linear-gradient(135deg, #FAF8F5 0%, #EDE8DF 100%);
+  background-size: 28px 28px, 100% 100%;
+  background-clip: padding-box;
+  background-attachment: fixed;
+}
+
+/* Additional layout styling helpers */
+.bg-blueprint {
+  background-image: 
+    linear-gradient(rgba(26, 26, 26, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 26, 26, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.stripe-accent {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(26, 26, 26, 0.02),
+    rgba(26, 26, 26, 0.02) 10px,
+    rgba(26, 26, 26, 0.04) 10px,
+    rgba(26, 26, 26, 0.04) 20px
+  );
+}
+
+/* ================= NIGHT MODE DEEP OVERRIDES ================= */
+.dark body {
+  background-color: #0E0D0C !important;
+  color: #ECE5DC !important;
+  background-image: 
+    radial-gradient(#635345 1.5px, transparent 1.5px),
+    linear-gradient(135deg, #161413 0%, #0E0D0C 100%) !important;
+  background-size: 28px 28px, 100% 100% !important;
+}
+
+/* Base backgrounds mapping */
+.dark .bg-\[\#FAF9F6\] {
+  background-color: #1A1816 !important;
+}
+.dark .bg-\[\#FAF9F6\]\/95 {
+  background-color: rgba(26, 24, 22, 0.95) !important;
+}
+.dark .bg-\[\#EAE6DF\] {
+  background-color: #2D2722 !important;
+}
+.dark .bg-white {
+  background-color: #201D1A !important;
+}
+.dark .bg-neutral-100 {
+  background-color: #24201D !important;
+}
+.dark .bg-\[\#FAF9F6\]\/50 {
+  background-color: rgba(26, 24, 22, 0.5) !important;
+}
+.dark .bg-neutral-50 {
+  background-color: #25221F !important;
+}
+.dark .bg-neutral-50\/50 {
+  background-color: rgba(37, 34, 31, 0.5) !important;
+}
+
+/* Hover effects */
+.dark .hover\:bg-\[\#EAE6DF\]:hover {
+  background-color: #3D352F !important;
+}
+.dark .hover\:bg-neutral-200:hover {
+  background-color: #2D2722 !important;
+}
+.dark .hover\:bg-neutral-50:hover {
+  background-color: #292420 !important;
+}
+
+/* Foreground texts mapping */
+.dark .text-neutral-900,
+.dark .text-neutral-950,
+.dark .text-\[\#1A1A1A\] {
+  color: #ECE5DC !important;
+}
+.dark .text-neutral-500,
+.dark .text-neutral-600 {
+  color: #A39A90 !important;
+}
+.dark .text-neutral-700,
+.dark .text-neutral-800 {
+  color: #D3C9BE !important;
+}
+.dark .placeholder-neutral-400::placeholder {
+  color: #6C6257 !important;
+}
+
+/* Borders mapping */
+.dark .border-neutral-900,
+.dark .border-neutral-950,
+.dark .border-neutral-300,
+.dark .border-gray-200,
+.dark .border-gray-150,
+.dark .border-gray-100 {
+  border-color: #453E38 !important;
+}
+.dark .border-b-2,
+.dark .border-t-2,
+.dark .border-l-2,
+.dark .border-r-2,
+.dark .border-2 {
+  border-color: #4D453E !important;
+}
+.dark .border {
+  border-color: #3C3630 !important;
+}
+
+/* Custom header & footer borders */
+.dark header {
+  background-color: rgba(26, 24, 22, 0.95) !important;
+  border-bottom-color: #4D453E !important;
+}
+.dark header .text-neutral-900 {
+  color: #FAF4EB !important;
+}
+
+/* Neo-brutalist custom shadows (invert black shadow elements to elegant glow or tight black silhouettes) */
+.dark .shadow-\[2px_2px_0px_0px_rgba\(0\,0\,0\,1\)\] {
+  box-shadow: 2px 2px 0px 0px #000000 !important;
+}
+.dark .shadow-\[4px_4px_0px_0px_rgba\(26\,26\,26\,1\)\] {
+  box-shadow: 4px 4px 0px 0px #000000 !important;
+}
+.dark .shadow-\[6px_6px_0px_0px_rgba\(26\,26\,26\,1\)\] {
+  box-shadow: 6px 6px 0px 0px #000000 !important;
+}
+.dark .shadow-\[8px_8px_0px_0px_rgba\(26\,26\,26\,1\)\] {
+  box-shadow: 8px 8px 0px 0px #000000 !important;
+}
+
+/* Custom interactive inputs inside dark mode must remain crisp and eye safe */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #151311 !important;
+  color: #FAF7F2 !important;
+  border-color: #4D453E !important;
+}
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  background-color: #1C1917 !important;
+}
+
+/* Blueprints and Stripe layouts in Night Mode */
+.dark .bg-blueprint {
+  background-image: 
+    linear-gradient(rgba(235, 220, 200, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(235, 220, 200, 0.012) 1px, transparent 1px) !important;
+}
+.dark .stripe-accent {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(235, 220, 200, 0.008),
+    rgba(235, 220, 200, 0.008) 10px,
+    rgba(235, 220, 200, 0.015) 10px,
+    rgba(235, 220, 200, 0.015) 20px
+  ) !important;
+}
+
+/* Footer layout inside dark mode */
+.dark footer {
+  background-color: #141211 !important;
+  border-top-color: #4D453E !important;
+}
+.dark footer .text-neutral-500 {
+  color: #8C8276 !important;
+}
+
+/* Scrollbars follow the paper theme in both modes */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #1A1A1A #E8E2D8;
+}
+.dark {
+  scrollbar-color: #E4D8C8 #141211;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: #E8E2D8;
+}
+*::-webkit-scrollbar-thumb {
+  background: #1A1A1A;
+  border: 2px solid #E8E2D8;
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #3A342E;
+}
+*::-webkit-scrollbar-corner {
+  background: #E8E2D8;
+}
+.dark *::-webkit-scrollbar-track,
+.dark *::-webkit-scrollbar-corner {
+  background: #141211;
+}
+.dark *::-webkit-scrollbar-thumb {
+  background: #E4D8C8;
+  border-color: #141211;
+}
+.dark *::-webkit-scrollbar-thumb:hover {
+  background: #F6F0E8;
+}
+

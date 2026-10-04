@@ -1,0 +1,16 @@
+Nexus Marketplace demo accounts
+================================
+
+These accounts are created in the browser the first time the app runs.
+Passwords are stored in plain text for the local demo. Do not reuse them anywhere else.
+
+Role     Username        Password       Name                         Notes
+-------  --------------  -------------  ---------------------------  ---------------------------
+Admin    admin           admin123       Built-in Administrator       Full account and catalog control
+Seller   alpha_seller    password123    Alpha Electronics & Gear     Store: Alpha Tech & Gear
+Seller   nordic_living   password123    Nordic Designs Co.           Store: Nordic Minimalist Living
+Buyer    alex_buyer      password123    Alex Johnson                 Starts with $1,500 store credit
+Buyer    jane_shopper    password123    Jane Smith                   Starts with $850 store credit
+
+New seller registrations stay pending until an administrator approves them.
+Buyer checkout uses demo store credit. No real card is charged.
